@@ -46,37 +46,37 @@ export default function CountdownClock({
   }
 
   return (
-    <div className="rounded-2xl bg-white/30 px-12 py-8 shadow-lg backdrop-blur-md">
+    <div className="rounded-2xl bg-black/70 px-12 py-8 shadow-lg backdrop-blur-md">
       <div className="flex gap-8">
         <div className="flex flex-col items-center">
-          <span className="text-5xl leading-none font-bold text-black">
+          <span className="text-5xl leading-none font-bold text-red-900">
             {timeLeft.days}
           </span>
-          <span className="mt-2 text-sm tracking-wider text-black uppercase">
+          <span className="mt-2 text-sm tracking-wider text-red-800 uppercase">
             Days
           </span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl leading-none font-bold text-black">
+          <span className="text-5xl leading-none font-bold text-red-900">
             {timeLeft.hours}
           </span>
-          <span className="mt-2 text-sm tracking-wider text-black uppercase">
+          <span className="mt-2 text-sm tracking-wider text-red-800 uppercase">
             Hours
           </span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl leading-none font-bold text-black">
+          <span className="text-5xl leading-none font-bold text-red-900">
             {timeLeft.minutes}
           </span>
-          <span className="mt-2 text-sm tracking-wider text-black uppercase">
+          <span className="mt-2 text-sm tracking-wider text-red-800 uppercase">
             Minutes
           </span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl leading-none font-bold text-black">
+          <span className="text-5xl leading-none font-bold text-red-900">
             {timeLeft.seconds}
           </span>
-          <span className="mt-2 text-sm tracking-wider text-black uppercase">
+          <span className="mt-2 text-sm tracking-wider text-red-800 uppercase">
             Seconds
           </span>
         </div>
