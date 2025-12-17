@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 
 export default function CountdownClock({
@@ -7,7 +8,14 @@ export default function CountdownClock({
   targetDate: string;
   onComplete: () => void;
 }) {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // Initialize with null to indicate we haven't calculated yet
+  const [timeLeft, setTimeLeft] = useState<{
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    expired: boolean;
+  } | null>(null);
 
   function calculateTimeLeft() {
     const target = new Date(targetDate).getTime();
@@ -28,6 +36,9 @@ export default function CountdownClock({
   }
 
   useEffect(() => {
+    // Calculate immediately on mount (client-side only)
+    setTimeLeft(calculateTimeLeft());
+
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
@@ -40,7 +51,25 @@ export default function CountdownClock({
 
     return () => clearInterval(timer);
   }, [targetDate, onComplete]);
-
+  // Show loading state while we calculate client-side
+  if (!timeLeft) {
+    return (
+      <div className="rounded-2xl bg-black/70 px-12 py-8 shadow-lg backdrop-blur-md">
+        <div className="flex gap-8">
+          {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <span className="text-5xl leading-none font-bold text-red-900">
+                --
+              </span>
+              <span className="mt-2 text-sm tracking-wider text-red-800 uppercase">
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
   if (timeLeft.expired) {
     return <div className="text-2xl font-bold text-gray-600">Times up!</div>;
   }
