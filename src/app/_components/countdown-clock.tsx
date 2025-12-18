@@ -67,7 +67,7 @@ export default function CountdownClock({
   if (timeLeft.expired) {
     return (
       <div className="font-mono text-3xl font-bold text-red-500 drop-shadow-[0_0_20px_rgba(239,68,68,0.9)] sm:text-4xl md:text-5xl">
-        TIME'S UP!
+        TIME`S UP!
       </div>
     );
   }
