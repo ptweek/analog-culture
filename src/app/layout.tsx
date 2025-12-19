@@ -6,7 +6,7 @@ import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
-  title: "analog-culture.com",
+  title: "Analog Culture",
   description: "Bushwick's Newest Techno Event",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
