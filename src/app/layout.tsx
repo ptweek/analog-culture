@@ -5,6 +5,7 @@ import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "./_components/navbar";
+import VideoBackground from "./_components/video-background";
 
 export const metadata: Metadata = {
   title: "Analog Culture",
@@ -22,15 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body className="relative">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="fixed inset-0 -z-10 h-full w-full object-cover"
-        >
-          <source src="/background-video.mp4" type="video/mp4" />
-        </video>
+        <VideoBackground />
         <div className="relative z-10">
           <Navbar />
           <TRPCReactProvider>{children}</TRPCReactProvider>
