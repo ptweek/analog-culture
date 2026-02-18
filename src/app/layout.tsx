@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
   title: "Analog Culture",
@@ -31,6 +32,7 @@ export default function RootLayout({
           <source src="/background-video.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10">
+          <Navbar />
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </div>
       </body>
