@@ -124,21 +124,12 @@ function ResidentSection({
         </motion.div>
 
         {/* Dense bottom gradient so name always reads */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
         {/* Subtle top vignette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 to-transparent" />
 
         {/* Name block */}
         <div className="absolute bottom-0 left-0 p-8 md:p-20">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="block font-mono text-xs tracking-widest text-red-500 uppercase"
-          >
-            Resident&nbsp;—&nbsp;{String(index + 1).padStart(2, "0")}
-          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +177,7 @@ function ResidentSection({
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, margin: "-80px" }}
-          className={`relative min-h-96 overflow-hidden md:min-h-[600px] ${
+          className={`relative min-h-96 overflow-hidden md:min-h-150 ${
             flipLayout ? "md:order-1" : "md:order-2"
           }`}
         >
