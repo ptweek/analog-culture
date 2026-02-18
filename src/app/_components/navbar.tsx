@@ -4,10 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
-  { href: "/", label: "Countdown" },
-  { href: "/residents", label: "Residents" },
-];
+const links = [{ href: "/", label: "Countdown" }];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
